@@ -1,13 +1,42 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.math.*;
+import java.io.*;
 
 public class ReceiptMaker{
 
 	public static void main(String[] args){
 		Scanner reader = new Scanner(System.in);	//setup to read user inputs
 		String itemBought = "";
+		///////////////
+		String fileName = "ItemsPrice.txt";
+		String line = null;
+		List<List<String>> itemsWithPricesList = new ArrayList<List<String>>();
+		
+		  try{
+	            FileReader fileReader = new FileReader(fileName);
+	            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+	            while((line = bufferedReader.readLine()) != null)
+	            	System.out.println(line);
+	                
+
+	            bufferedReader.close();         
+	        }
+	        catch(FileNotFoundException ex){
+	            System.out.println(
+	                "Unable to open file '" + 
+	                fileName + "'");                
+	        }
+	        catch(IOException ex) {
+	            System.out.println(
+	                "Error reading file '" 
+	                + fileName + "'");
+	            // Or we could just do this: 
+	            // ex.printStackTrace();
+	        }
+		
+		///////////////
 		List<String> itemList = new ArrayList<String>();	//list of all items bought by user
 		
 		System.out.println("Enter items bought, write 'end' when done: ");
@@ -38,6 +67,6 @@ public class ReceiptMaker{
 		System.out.printf("\nSubtotal:\t$%.2f%n", total);
 		System.out.printf("HST: \t\t$%.2f%n", hst);
 		System.out.printf("Your total:\t$%.2f%n",finalTotal);
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~\n     Thank You!");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~\n      Thank You!");
 	}
 }

@@ -1,0 +1,16 @@
+apple,1.49
+bread,1.99
+milk,2.99
+eggnog,2.99
+egg carton,3.95
+allan,42069.00
+jon,69420.00
+banana,2.95
+peas,0.99
+nutella,5.99
+cashews,3.95
+pickle,3.99
+carrot,0.60
+cereal,3.95
+toilet paper,0.45
+shampoo,6.95
